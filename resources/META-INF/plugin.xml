@@ -1,6 +1,6 @@
 <idea-plugin>
-    <id>com.your.company.unique.plugin.id</id>
-    <name>com.yanyi.translation.Translation YanYi</name>
+    <id>Translation YanYi</id>
+    <name>com.yanyi.translation.Translation</name>
     <version>1.0</version>
     <vendor email="ben@yanyi.red" url="http://www.yanyis.space">YanYi</vendor>
 
