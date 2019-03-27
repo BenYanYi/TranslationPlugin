@@ -1,0 +1,37 @@
+<idea-plugin>
+    <id>com.your.company.unique.plugin.id</id>
+    <name>com.yanyi.translation.Translation YanYi</name>
+    <version>1.0</version>
+    <vendor email="ben@yanyi.red" url="http://www.yanyis.space">YanYi</vendor>
+
+    <description>
+        一款简单的翻译软件，用于将别的语言翻译成中文，也能将中文翻译成英文，暂时不支持将中文翻译成除英文外的别的语言。
+    </description>
+
+    <change-notes>
+        第一版，首次提交上传更新，快速方便实现AndroidStudio内翻译，不需打开第三方翻译
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0" />
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="com.mylove.translation" class="com.yanyi.translation.Translation" text="在线翻译"
+            description="一款简单的在线翻译插件">
+            <add-to-group group-id="ToolsMenu" anchor="first" />
+            <keyboard-shortcut keymap="$default" first-keystroke="alt F2" />
+        </action>
+    </actions>
+
+</idea-plugin>
