@@ -9,7 +9,7 @@
     </description>
 
     <change-notes>
-        第一版，首次提交上传更新，快速方便实现AndroidStudio内翻译，不需打开第三方翻译
+        第一版，首次提交上传更新，快速方便实现idea类开发工具内翻译，不需打开第三方翻译
     </change-notes>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
