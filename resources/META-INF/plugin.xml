@@ -1,8 +1,8 @@
 <idea-plugin>
     <id>Translation YanYi</id>
-    <name>com.yanyi.translation.Translation</name>
+    <name>Translation YanYi</name>
     <version>1.0</version>
-    <vendor email="ben@yanyi.red" url="http://www.yanyis.space">YanYi</vendor>
+    <vendor email="ben@yanyi.red" url="https://github.com/BenYanYi">BenYanYi</vendor>
 
     <description>
         一款简单的翻译软件，用于将别的语言翻译成中文，也能将中文翻译成英文，暂时不支持将中文翻译成除英文外的别的语言。
