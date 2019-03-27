@@ -3,24 +3,24 @@ package com.yanyi.translation;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TransApi {
+ class TransApi {
     private static final String Language_Url = "http://api.fanyi.baidu.com/api/trans/vip/language";
     private static final String TRANS_API_HOST = "http://api.fanyi.baidu.com/api/trans/vip/translate";
 
     private String appid;
     private String securityKey;
 
-    public TransApi(String appid, String securityKey) {
+     TransApi(String appid, String securityKey) {
         this.appid = appid;
         this.securityKey = securityKey;
     }
 
-    public String getTransResult(String query, String from, String to) {
+     String getTransResult(String query, String from, String to) {
         Map<String, String> params = buildParams(query, from, to);
         return HttpUtil.get(TRANS_API_HOST, params);
     }
 
-    public String getLanguageResult(String query) {
+     String getLanguageResult(String query) {
         Map<String, String> params = buildLanguage(query);
         return HttpUtil.get(Language_Url, params);
     }

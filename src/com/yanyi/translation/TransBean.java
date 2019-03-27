@@ -10,19 +10,19 @@ class TransBean {
     private String src;
     private String dst;
 
-    public String getSrc() {
+    String getSrc() {
         return src;
     }
 
-    public void setSrc(String src) {
+    void setSrc(String src) {
         this.src = src;
     }
 
-    public String getDst() {
+    String getDst() {
         return dst;
     }
 
-    public void setDst(String dst) {
+    void setDst(String dst) {
         this.dst = dst;
     }
 }

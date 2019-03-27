@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
  * @email ben@yanyi.red
  * @overview
  */
-public class Md5Util {
+class Md5Util {
     // 首先初始化一个字符数组，用来存放每个16进制字符
     private static final char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd',
             'e', 'f'};
@@ -25,7 +25,7 @@ public class Md5Util {
      * @param input 输入的字符串
      * @return 输入字符串的MD5值
      */
-    public static String md5(String input) {
+    static String md5(String input) {
         if (input == null)
             return null;
 
@@ -51,7 +51,7 @@ public class Md5Util {
      * @param file
      * @return
      */
-    public static String md5(File file) {
+    static String md5(File file) {
         try {
             if (!file.isFile()) {
                 System.err.println("文件" + file.getAbsolutePath() + "不存在或者不是文件");
@@ -75,7 +75,7 @@ public class Md5Util {
         return null;
     }
 
-    public static String md5(InputStream in) {
+    static String md5(InputStream in) {
 
         try {
             MessageDigest messagedigest = MessageDigest.getInstance("MD5");

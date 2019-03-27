@@ -24,11 +24,11 @@ import javax.net.ssl.X509TrustManager;
  * @email ben@yanyi.red
  * @overview
  */
-public class HttpUtil {
-    protected static final int SOCKET_TIMEOUT = 10000; // 10S
-    protected static final String GET = "GET";
+class HttpUtil {
+    private static final int SOCKET_TIMEOUT = 10000; // 10S
+    private static final String GET = "GET";
 
-    public static String get(String host, Map<String, String> params) {
+    static String get(String host, Map<String, String> params) {
         try {
             // 设置SSLContext
             SSLContext sslcontext = SSLContext.getInstance("TLS");
@@ -72,7 +72,7 @@ public class HttpUtil {
         }
     }
 
-    public static String getUrlWithQueryString(String url, Map<String, String> params) {
+    static String getUrlWithQueryString(String url, Map<String, String> params) {
         if (params == null) {
             return url;
         }
@@ -105,7 +105,7 @@ public class HttpUtil {
         return builder.toString();
     }
 
-    protected static void close(Closeable closeable) {
+    static void close(Closeable closeable) {
         if (closeable != null) {
             try {
                 closeable.close();
@@ -121,7 +121,7 @@ public class HttpUtil {
      * @param input 原文
      * @return URL编码. 如果编码失败, 则返回原文
      */
-    public static String encode(String input) {
+    static String encode(String input) {
         if (input == null) {
             return "";
         }
