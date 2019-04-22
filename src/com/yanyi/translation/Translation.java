@@ -2,7 +2,6 @@ package com.yanyi.translation;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.ui.Messages;
 
 import java.awt.Toolkit;
@@ -73,13 +72,13 @@ public class Translation extends AnAction {
 
     private void show(String text, String msg) {
 //        //这个回调是线程里面的，所以要加个方法，不然会报错
-        ApplicationManager.getApplication().invokeLater(() -> {
+//        ApplicationManager.getApplication().invokeLater(() -> {
 //            //弹出翻译结果对话框
             Messages.showMessageDialog(text + "\n" + "->" + "\n" + msg, "翻译结果", Messages.getInformationIcon());
             isDialog();
 //            String str = Messages.showInputDialog(text, "翻译结果", Messages.getInformationIcon(), msg, null);
 //            trans(str);
-        });
+//        });
     }
 
     /**
