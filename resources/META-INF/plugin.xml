@@ -5,11 +5,17 @@
     <vendor email="ben@yanyi.red" url="https://github.com/BenYanYi">BenYanYi</vendor>
 
     <description>
-        一款简单的翻译软件，用于将别的语言翻译成中文，也能将中文翻译成英文，暂时不支持将中文翻译成除英文外的别的语言。
+<!--        <![CDATA[-->
+    一款简单的翻译软件，用于将别的语言翻译成中文，也能将中文翻译成英文，暂时不支持将中文翻译成除英文外的别的语言。
+        A simple translation software for translating other languages into Chinese, and also translating Chinese into English. For the time being, it does not support translating Chinese into other languages than English.
+<!--    ]]>-->
     </description>
 
     <change-notes>
-        第一版，首次提交上传更新，快速方便实现idea类开发工具内翻译，不需打开第三方翻译
+<!--        <![CDATA[-->
+        v.1.0.2 修改页面细节，翻译数据优化
+        v1.0 第一版，首次提交上传更新，快速方便实现idea类开发工具内翻译，不需打开第三方翻译
+<!--        ]]>-->
     </change-notes>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
@@ -33,5 +39,9 @@
             <keyboard-shortcut keymap="$default" first-keystroke="alt F2" />
         </action>
     </actions>
-
+    <application-components>
+        <component>
+            <implementation-class>com.yanyi.translation.Translation</implementation-class>
+        </component>
+    </application-components>
 </idea-plugin>
