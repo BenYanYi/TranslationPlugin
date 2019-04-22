@@ -1,4 +1,4 @@
-# TranslationPlugin
+# TranslationPlugin[ ![Download](https://api.bintray.com/packages/lamster2018/maven/easy-protector-release/images/download.svg) ](https://bintray.com/lamster2018/maven/easy-protector-release/_latestVersion)
 idea翻译插件
 
 ## 使用
