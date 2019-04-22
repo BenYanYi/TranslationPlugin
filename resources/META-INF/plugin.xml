@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>Translation YanYi</id>
     <name>Translation YanYi</name>
-    <version>1.0</version>
+    <version>1.0.2</version>
     <vendor email="ben@yanyi.red" url="https://github.com/BenYanYi">BenYanYi</vendor>
 
     <description>

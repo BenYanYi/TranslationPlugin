@@ -2,6 +2,7 @@ package com.yanyi.translation;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.ui.Messages;
 
 import java.awt.Toolkit;
@@ -14,7 +15,7 @@ import java.util.List;
 
 /**
  * @author YanYi
- * @date 2019/3/27 11:28
+ * @date 2019/3/27 11:28x
  * @email ben@yanyi.red
  * @overview
  */
@@ -24,6 +25,16 @@ public class Translation extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
+//        String text = getSysClipboardText();
+//        if (text == null || text.equals("") || text.trim().equals("") || text.length() <= 0) {
+//            isDialog();
+//        } else {
+//            trans(text);
+//        }
+        isDialog();
+    }
+
+    private void isDialog() {
         String text = Messages.showInputDialog("请输入要翻译的内容", "提示", Messages.getQuestionIcon());
         trans(text);
     }
@@ -47,7 +58,9 @@ public class Translation extends AnAction {
                             str.append(transBean.getDst()).append(";");
                         }
                     }
-                    str.deleteCharAt(str.length() - 1);
+                    if (str.length() > 0) {
+                        str.deleteCharAt(str.length() - 1);
+                    }
                     show(text, str.toString());
                 } else {
                     show(text, "翻译失败");
@@ -60,17 +73,19 @@ public class Translation extends AnAction {
 
     private void show(String text, String msg) {
 //        //这个回调是线程里面的，所以要加个方法，不然会报错
-//        ApplicationManager.getApplication().invokeLater(() -> {
+        ApplicationManager.getApplication().invokeLater(() -> {
 //            //弹出翻译结果对话框
-        String str = Messages.showInputDialog(text, "翻译结果", Messages.getInformationIcon(), msg, null);
-        trans(str);
-//        });
+            Messages.showMessageDialog(text + "\n" + "->" + "\n" + msg, "翻译结果", Messages.getInformationIcon());
+            isDialog();
+//            String str = Messages.showInputDialog(text, "翻译结果", Messages.getInformationIcon(), msg, null);
+//            trans(str);
+        });
     }
 
     /**
      * 从剪切板获得文字。
      */
-    public static String getSysClipboardText() {
+    private String getSysClipboardText() {
         String ret = "";
         Clipboard sysClip = Toolkit.getDefaultToolkit().getSystemClipboard();
         // 获取剪切板中的内容
@@ -81,8 +96,9 @@ public class Translation extends AnAction {
                 try {
                     ret = (String) clipTf
                             .getTransferData(DataFlavor.stringFlavor);
+                    return ret;
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    return "";
                 }
             }
         }
